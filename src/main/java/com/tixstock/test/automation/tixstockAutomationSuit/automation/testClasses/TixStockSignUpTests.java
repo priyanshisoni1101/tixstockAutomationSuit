@@ -57,7 +57,7 @@ public class TixStockSignUpTests extends TestBase {
 
     @AfterClass
     public void afterClass() {
-        //driver.quit();
+        driver.quit();
     }
 
     @Test(enabled = true, priority = 0)

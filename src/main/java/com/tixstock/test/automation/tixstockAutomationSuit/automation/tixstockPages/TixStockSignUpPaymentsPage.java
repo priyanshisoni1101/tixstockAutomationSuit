@@ -1,5 +1,6 @@
 package com.tixstock.test.automation.tixstockAutomationSuit.automation.tixstockPages;
 
+import com.tixstock.test.automation.tixstockAutomationSuit.automation.testBase.TestBase;
 import com.tixstock.test.automation.tixstockAutomationSuit.automation.xPaths.TixStockSignUpPageXPaths;
 import lombok.Data;
 import org.openqa.selenium.By;
@@ -8,10 +9,9 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-public class TixStockSignUpPaymentsPage {
+public class TixStockSignUpPaymentsPage extends TestBase {
     TixStockSignUpPageXPaths xPaths = new TixStockSignUpPageXPaths();
 
-    private final WebDriver driver;
     private final By fundingBankName = By.id(xPaths.fundingBankName_id);
     private final By fundingHolderName = By.id(xPaths.fundingHolderName_id);
     private final By fundingIBAN_NO = By.xpath(xPaths.fundingIBAN_NO_xpath);

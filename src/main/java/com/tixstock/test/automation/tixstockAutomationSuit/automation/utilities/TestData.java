@@ -26,9 +26,9 @@ public class TestData {
             fundingHolderName= userName,No = "No",Yes="Yes",
             IbanAcc =getRandomIntString(10),
             SortCode= getRandomIntString(4),
-            cardNumber=getRandomIntString(16),
+            cardNumber="4111111111111111",
             ExpiryInput="06/29",
-            cardCvv=getRandomIntString(3),
+            cardCvv="123",
             India="India",INR="INR",USD="USD",
             filePath1=System.getProperty("user.dir")+"src/reports/someFile.pdf",
             filePath2=System.getProperty("user.dir")+"src/reports/someFile.pdf";

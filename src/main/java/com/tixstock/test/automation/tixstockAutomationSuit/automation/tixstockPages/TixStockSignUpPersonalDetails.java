@@ -1,5 +1,6 @@
 package com.tixstock.test.automation.tixstockAutomationSuit.automation.tixstockPages;
 
+import com.tixstock.test.automation.tixstockAutomationSuit.automation.testBase.TestBase;
 import com.tixstock.test.automation.tixstockAutomationSuit.automation.xPaths.TixStockSignUpPageXPaths;
 import lombok.Data;
 import org.openqa.selenium.By;
@@ -8,10 +9,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-public class TixStockSignUpPersonalDetails {
+public class TixStockSignUpPersonalDetails extends TestBase {
     TixStockSignUpPageXPaths xPaths = new TixStockSignUpPageXPaths();
 
-    private final WebDriver driver;
     private final By business_RadioButton = By.id(xPaths.Business_id);
     private final By business_RadioButton_2 = By.xpath(xPaths.Business_button_xPath);
     private final By individual_RadioButton_2 = By.xpath(xPaths.Individual_button_xPath);
