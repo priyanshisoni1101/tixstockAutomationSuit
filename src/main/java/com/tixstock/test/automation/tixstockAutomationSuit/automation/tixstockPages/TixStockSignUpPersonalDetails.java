@@ -1,19 +1,15 @@
 package com.tixstock.test.automation.tixstockAutomationSuit.automation.tixstockPages;
 
-import com.tixstock.test.automation.tixstockAutomationSuit.automation.xPaths.TixStockSignUpPage_xPaths;
+import com.tixstock.test.automation.tixstockAutomationSuit.automation.xPaths.TixStockSignUpPageXPaths;
 import lombok.Data;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import com.tixstock.test.automation.tixstockAutomationSuit.automation.xPaths.TixStockSignUpPage_xPaths.*;
 
 @Component
 @Data
-public class TixStockSignUp_PersonalDetails {
-    TixStockSignUpPage_xPaths xPaths = new TixStockSignUpPage_xPaths();
+public class TixStockSignUpPersonalDetails {
+    TixStockSignUpPageXPaths xPaths = new TixStockSignUpPageXPaths();
 
     private final WebDriver driver;
     private final By business_RadioButton = By.id(xPaths.Business_id);
@@ -41,7 +37,7 @@ public class TixStockSignUp_PersonalDetails {
     private final By save_Button = By.xpath(xPaths.saveButton_xpath);
 
 
-    public TixStockSignUp_PersonalDetails(WebDriver driver) {
+    public TixStockSignUpPersonalDetails(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -109,13 +105,14 @@ public class TixStockSignUp_PersonalDetails {
 
     public String enterCountry(String country) {
         driver.findElement(country_options_DropDown_button).click();
-        By country_options_byName= By.xpath("//*[contains(text(),'"+country+"')]");
+        By country_options_byName = By.xpath("//*[contains(text(),'" + country + "')]");
         driver.findElement(country_options_byName).click();
         return driver.findElement(country_TextField).getAttribute("value");
     }
+
     public String enterCountry(int selectIndex) {
         driver.findElement(country_options_DropDown_button).click();
-        By country_options_byIndex = By.xpath(xPaths.country_options_byIndex_xpath+selectIndex+"]");
+        By country_options_byIndex = By.xpath(xPaths.country_options_byIndex_xpath + selectIndex + "]");
         driver.findElement(country_options_byIndex).click();
         return driver.findElement(country_TextField).getAttribute("value");
     }
@@ -131,6 +128,7 @@ public class TixStockSignUp_PersonalDetails {
     }
 
     public String enterCity(String city) {
+
         driver.findElement(city_TextField).sendKeys(city);
         return driver.findElement(city_TextField).getAttribute("value");
     }
@@ -140,11 +138,11 @@ public class TixStockSignUp_PersonalDetails {
         return driver.findElement(postcode_TextField).getAttribute("value");
     }
 
-    public void pressSaveButton(){
+    public void pressSaveButton() {
         driver.findElement(save_Button).click();
     }
 
-    public void pressSubmitButton(){
+    public void pressSubmitButton() {
         driver.findElement(submit_Button).click();
     }
 
