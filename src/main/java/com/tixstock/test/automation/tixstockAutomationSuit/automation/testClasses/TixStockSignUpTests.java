@@ -30,13 +30,14 @@ public class TixStockSignUpTests extends TestBase {
     TixStockSignUpPaymentsPage paymentsPage;
 
     WebDriverWait wait;
+
     By signUpButton, business_RadioButton;
     String tixStockUrl;
     @BeforeClass
     public void beforeClass() {
         driver = new FirefoxDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\nikhilsoni\\Downloads\\geckodriver");
+        System.setProperty("webdriver.gecko.driver", getFieldFromPropertiesFile(getDriverPath));
         tixStockUrl = getFieldFromPropertiesFile(environment_url_variableName);
         driver.get(tixStockUrl);
         //driver.manage().window().fullscreen();
@@ -136,7 +137,7 @@ public class TixStockSignUpTests extends TestBase {
     }
 
     @Test(enabled = true,priority = 4)
-    public void TC05_PaymentsPage_SetFields(){
+    public void TC05_PaymentsPage_SetFields() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(paymentsPage.getFundingBankName()));
         Assert.assertEquals(driver.getCurrentUrl(), tixStock_paymentsPage_url, "Validate if page loaded and click button is visible");
 
@@ -146,13 +147,13 @@ public class TixStockSignUpTests extends TestBase {
         paymentsPage.enterFundingIbanNOACC(IbanAcc);
         paymentsPage.enterFundingIbanNoSortCode(SortCode);
         paymentsPage.enterUseSameAcc();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(paymentsPage.getCardNumber()));
+        driver.switchTo().frame(driver.findElement(By.xpath("//*[@title='Secure payment input frame']")));
+
         paymentsPage.enterCardNumber(cardNumber);
         paymentsPage.enterCardExpiryInput(ExpiryInput);
         paymentsPage.enterCardCVV(cardCvv);
-        paymentsPage.enterCountryDropdown(India);
-        paymentsPage.enterBaseCurrencyDropDownByIndex(1);
-        paymentsPage.enterBaseCurrencyDropDownByName(USD);
+        //paymentsPage.enterBaseCurrencyDropDownByIndex(1);
+        //paymentsPage.enterBaseCurrencyDropDownByName(USD);
         paymentsPage.enterIsVatRegistered(No);
         paymentsPage.enterUploadFile(filePath1);
         paymentsPage.enterUploadFile(filePath2);

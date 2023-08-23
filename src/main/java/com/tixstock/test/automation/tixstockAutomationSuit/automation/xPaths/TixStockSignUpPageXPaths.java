@@ -51,12 +51,12 @@ public class TixStockSignUpPageXPaths {
     public String withdrawalIBAN_NO_xpath = "//*[@for='withdrawal-iban-no']/h4";
     public String withdrawalIBAN_NO_ACC_id = "withdrawal_ac_number";
     public String withdrawalIBAN_NO_SortCode_id = "withdrawal_sort_code";
-    public String cardNumber_xpath = "Field-numberInput";
+    public String cardNumber_xpath = "//*[@class='p-CardNumberInput']/div/input";
     public String cardExpiryInput_id = "Field-expiryInput";
     public String cardCVV_id = "Field-cvcInput";
     public String country_dropdown_xpath = "//*[@for='Field-countryInput']/parent::div/div/div/div";
     public String country_field_xpath = "//*[@for='Field-countryInput']/parent::div/div/div/select";
-    public String baseCurrency_dropDown_xpath = "//*[@class='all_dropdown__indicator all_dropdown__dropdown-indicator css-yjbq0y-indicatorContainer']";
+    public String baseCurrency_dropDown_xpath = "//*[@class='all_dropdown__control css-1703bk2-control']/div/div//*[contains(text(),'Select base currency')]/parent::div/parent::div/parent::div/div//*[@class='all_dropdown__indicator all_dropdown__dropdown-indicator css-1qajzci-indicatorContainer']";
     public String baseCurrency_dropDown_byIndex_xpath = "//*[@class='scrollbar-thin scrollbar-thumb-violet-800 scrollbar-thumb-rounded-full all_dropdown__menu-list css-12gthpx']/div["; //Partial
     public String baseCurrency_dropDown_byName_xpath = "//*[@class='scrollbar-thin scrollbar-thumb-violet-800 scrollbar-thumb-rounded-full all_dropdown__menu-list css-12gthpx']//*[contains(text(),'";//Partial
     public String revenue_dropDown_class = "all_dropdown__indicator all_dropdown__dropdown-indicator css-ugaxsa-indicatorContainer";

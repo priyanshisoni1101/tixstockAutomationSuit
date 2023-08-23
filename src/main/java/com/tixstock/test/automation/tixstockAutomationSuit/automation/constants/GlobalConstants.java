@@ -11,6 +11,7 @@ public class GlobalConstants {
     //Env constants
     public static String environment_url_variableName = "tixStock.env.url";
     public static String currentTestingEnv_variableName = "tixstock.testing.env";
+    public static String getDriverPath = "firefox.driver.path";
 
     public static String Dashboard= "Dashboard";
     public static String tixStock_YourDetails_url= "https://sandbox-new.tixstock.com/your-details";

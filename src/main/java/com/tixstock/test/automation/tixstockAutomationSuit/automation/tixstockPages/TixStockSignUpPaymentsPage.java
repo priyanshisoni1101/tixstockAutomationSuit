@@ -29,7 +29,7 @@ public class TixStockSignUpPaymentsPage {
     private final By withdrawalIBAN_NO = By.xpath(xPaths.withdrawalIBAN_NO_xpath);
     private final By withdrawalIBAN_NO_ACC = By.id(xPaths.withdrawalIBAN_NO_ACC_id);
     private final By withdrawalIBAN_NO_SortCode = By.id(xPaths.withdrawalIBAN_NO_SortCode_id);
-    private final By cardNumber = By.id(xPaths.cardNumber_xpath);
+    private final By cardNumber = By.xpath(xPaths.cardNumber_xpath);
     private final By cardExpiryInput = By.id(xPaths.cardExpiryInput_id);
     private final By cardCVV = By.id(xPaths.cardCVV_id);
     private final By country_dropdown = By.xpath(xPaths.country_dropdown_xpath);
